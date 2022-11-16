@@ -23,7 +23,6 @@ class MainActivity2 : AppCompatActivity() {
         textView3.text=data2
         val  data3 = intent.getStringExtra(KEY3)
         supportActionBar?.title = data3
-
     }
 
     companion object {
