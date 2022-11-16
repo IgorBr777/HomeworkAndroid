@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/first_item"
+        android:title="@string/open_main_activity2" />
+    <item
+        android:id="@+id/second_item"
+        android:title="@string/clicked_second_item" />
+    <item
+        android:id="@+id/third_item"
+        android:title="@string/back" />
+
+    <item
+        android:id="@+id/four_item"
+        android:title="@string/finishAffinity" />
+</menu>
