@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">HomeworkAndroid</string>
+    <string name="color_blue_green">#088F8F</string>
+    <string name="color_gold">#FFD700</string>
+    <string name="color_coral">#FF7F50</string>
+    <string name="display_texts">DISPLAY TEXTS</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_password">Enter your password</string>
 </resources>
