@@ -44,21 +44,21 @@ class MainActivity : AppCompatActivity() {
                 dialog.setMessage("You must enter your name and password for registration")
                 layout1.setErrorIconDrawable(R.drawable.ic_baseline_error_24)
                 editText.error = "name can't be empty"
-            }
-            else {
+            } else {
                 dialog.setMessage("${name}${editText.text.toString()}  ${password}${editText2.text.toString()}")
             }
             if (editText2.text.toString().isEmpty()) {
                 dialog.setMessage("You must enter your name and password for registration")
                 layout2.setErrorIconDrawable(R.drawable.ic_baseline_error_24)
                 editText2.error = "password can't be empty"
-            } else {dialog.setMessage("${name}${editText.text.toString()} ${password}${editText2.text.toString()} ")
-                textView.text ="${editText.text.toString().isEmpty()} ${editText2.text.toString()}"
+            } else {
+                dialog.setMessage("${name}${editText.text.toString()} ${password}${editText2.text.toString()} ")
+                textView.text = "${editText.text.toString().isEmpty()} ${editText2.text.toString()}"
             }
         }
-        }
-
     }
+
+}
 
 
 
