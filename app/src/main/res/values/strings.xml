@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">HomeworkAndroid</string>
+
+    <string name="enter_your_login">Enter your login</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="enter_registration">Enter for registration</string>
+
+    <string name="information1">Information</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="login">\"Login: \"</string>
+    <string name="password">\"Password: \"</string>
+    <string name="login_not_empty">login can\'t be empty</string>
+    <string name="password_not_empty">password can\'t be empty</string>
+    <string name="you_must_enter_login_password">You must enter your login and password for registration</string>
+
+
 </resources>
