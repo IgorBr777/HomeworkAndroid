@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">HomeworkAndroid</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_your_login">Enter your login</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="sing_up">SING UP</string>
+    <string name="no_login">No login</string>
+    <string name="information">Information</string>
+    <string name="welcome_back">Welcome back!!!</string>
+    <string name="you_need_to_register">You need to register</string>
+    <string name="try_registering_again">Try registering again</string>
+    <string name="successful_registration">Successful registration</string>
+    <string name="registration">Registration</string>
+    <string name="hello_nested_fragment">Hello Nested Fragment!!!</string>
+
 </resources>
