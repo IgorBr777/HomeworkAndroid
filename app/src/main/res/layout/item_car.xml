@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="40dp"
+    android:layout_marginBottom="10dp"
+    android:backgroundTint="@color/blue">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_marginBottom="10dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="35sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.088"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_description"
+            android:layout_width="167dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="32dp"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iv_image_asterisk"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/iv_image_car"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time"
+            app:layout_constraintVertical_bias="0.509" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toEndOf="@+id/tv_title"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_image_car"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:layout_constraintVertical_bias="0.407" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_image_asterisk"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.855"
+            app:layout_constraintStart_toEndOf="@+id/tv_time"
+            app:layout_constraintTop_toTopOf="@+id/tv_time" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
