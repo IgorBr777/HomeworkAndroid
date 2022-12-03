@@ -8,8 +8,6 @@ data class ItemsModel (
     val image: Int,
     val image2: Int,
 
-
-
         )
 
 

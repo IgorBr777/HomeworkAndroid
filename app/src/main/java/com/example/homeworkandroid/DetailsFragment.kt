@@ -30,10 +30,10 @@ class DetailsFragment : Fragment() {
 
         val bundle = arguments
         bundle?.let { safeBundle ->
-            val title =safeBundle.getString("title")
-            val time = safeBundle.getString("time")
-            val description = safeBundle.getString("description")
-            val image = safeBundle.getInt("imageView")
+            val title =safeBundle.getString(Constance.TITLE)
+            val time = safeBundle.getString(Constance.TIME)
+            val description = safeBundle.getString(Constance.DESCRIPTION)
+            val image = safeBundle.getInt(Constance.IMAGE_VIEW)
 
             detailsTitle.text =title
             detailsTime.text =time
@@ -41,6 +41,5 @@ class DetailsFragment : Fragment() {
             detailsImage.setBackgroundResource(image)
 
         }
-
     }
     }
