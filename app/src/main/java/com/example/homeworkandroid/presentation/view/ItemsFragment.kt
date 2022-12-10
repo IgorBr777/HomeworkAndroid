@@ -92,7 +92,6 @@ class ItemsFragment : Fragment(), ItemsListener, ItemsView {
             .addToBackStack(getString(R.string.details))
             .commit()
 
-
     }
 
 
