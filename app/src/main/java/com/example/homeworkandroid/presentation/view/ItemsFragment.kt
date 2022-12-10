@@ -29,7 +29,6 @@ class ItemsFragment : Fragment(), ItemsListener, ItemsView {
     ): View {
         _viewBinding = FragmentItemsBinding.inflate(inflater)
         return viewBinding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
