@@ -5,5 +5,18 @@
     <string name="time">TIME</string>
     <string name="details">Details</string>
     <string name="porsche">Porsche</string>
-
+    <string name="cars">Cars</string>
+    <string name="description">DESCRIPTION</string>
+    <string name="login_app">LOGIN APP</string>
+    <string name="enter_your_login">Enter your login</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="enter">ENTER</string>
+    <string name="information">Information</string>
+    <string name="welcome_back">Welcome back!!!</string>
+    <string name="try_again_enter_login_password">Try again to enter the login and password</string>
+    <string name="try_registering_again">Try registering again</string>
+    <string name="successful_registration">Successful registration</string>
+    <string name="registration">Registration</string>
+    <string name="imageView_clicked">ImageView clicked</string>
+    <string name="login_app1">LOGIN APP</string>
 </resources>

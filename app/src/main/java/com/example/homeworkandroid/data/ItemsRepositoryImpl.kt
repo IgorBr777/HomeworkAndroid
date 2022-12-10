@@ -1,26 +1,12 @@
-package com.example.homeworkandroid
+package com.example.homeworkandroid.data
 
-import android.icu.text.CaseMap.Title
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.example.homeworkandroid.R
+import com.example.homeworkandroid.domain.ItemsRepository
 import com.example.homeworkandroid.model.ItemsModel
 import java.time.LocalDate
 
-class ItemsViewModel : ViewModel() {
-
-    private val _items = MutableLiveData<List<ItemsModel>>()
-    val items: LiveData<List<ItemsModel>> = _items
-
-    private val _msg = MutableLiveData<String>()
-    val msg: LiveData<String> = _msg
-
-    private val _bundle = MutableLiveData<NavigateWithBundle>()
-    val bundle: LiveData<NavigateWithBundle> = _bundle
-
-
-    fun getData() {
-
+class ItemsRepositoryImpl : ItemsRepository {
+    override fun getData(): List<ItemsModel> {
         val listItems = listOf<ItemsModel>(
             ItemsModel(
                 "BMW",
@@ -73,40 +59,9 @@ class ItemsViewModel : ViewModel() {
                 "Porsche",
                 "PORSCHE a German automobile company. The headquarters is located in Stuttgart.",
                 "${LocalDate.now()} ", R.drawable.porshe, R.drawable.asterisk
-            ),
+            )
         )
-
-        _items.value = listItems
-
-    }
-
-    fun imageViewClicked() {
-
-        _msg.value = "ImageView clicked"
-
-
-    }
-
-    fun elementClicked(
-        title: String,
-        time: String,
-        description: String,
-        imageView: Int,
-        imageView2: Int
-    ) {
-        _bundle.value = NavigateWithBundle(title, time, description, imageView,imageView2)
-
+        return listItems
     }
 
 }
-
-data class NavigateWithBundle(
-
-    val title: String,
-    val time: String,
-    val description: String,
-    val image: Int,
-    val image2: Int
-
-
-)

@@ -1,6 +1,6 @@
 package com.example.homeworkandroid.model
 
-data class ItemsModel (
+data class ItemsModel(
 
     val title: String,
     val description: String,
@@ -8,7 +8,7 @@ data class ItemsModel (
     val image: Int,
     val image2: Int,
 
-        )
+    )
 
 
 

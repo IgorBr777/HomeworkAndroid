@@ -9,15 +9,16 @@
     android:background="@color/cadet_blue"
     android:padding="50dp"
     android:layout_gravity="center"
-    tools:context=".DetailsFragment">
+    tools:context=".presentation.view.DetailsFragment">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/details_title"
         android:layout_width="207dp"
         android:layout_height="34dp"
         android:layout_marginTop="108dp"
+        android:layout_marginStart="50dp"
         android:gravity="center"
-        android:text="Cars"
+        android:text="@string/cars"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.078"
@@ -29,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:gravity="center"
-        android:text="DESCRIPTION"
+        android:text="@string/description"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/details_image_car"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="TIME"
+        android:text="@string/time"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
