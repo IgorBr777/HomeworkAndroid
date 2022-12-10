@@ -23,7 +23,6 @@ class ItemsFragment : Fragment(), ItemsListener, ItemsView {
     private lateinit var itemsAdapter: ItemsAdapter
     lateinit var itemsPresenter: ItemsPresenter
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
