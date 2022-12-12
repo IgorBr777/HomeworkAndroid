@@ -8,7 +8,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.homeworkandroid.R
+import com.example.homeworkandroid.data.ItemsRepositoryImpl
 import com.example.homeworkandroid.databinding.FragmentItemsBinding
+import com.example.homeworkandroid.domain.ItemsInteractor
 import com.example.homeworkandroid.presentation.adapter.ItemsAdapter
 import com.example.homeworkandroid.presentation.adapter.listener.ItemsListener
 import com.example.homeworkandroid.utils.BundleConstants
@@ -19,7 +21,8 @@ class ItemsFragment : Fragment(), ItemsListener {
     private val viewBinding get() = _viewBinding!!
 
     private lateinit var itemsAdapter: ItemsAdapter
-    private val viewModel: ItemsViewModel by viewModels()
+
+    private val viewModel: ItemsViewModel by viewModels{MyViewModelFactory(ItemsInteractor(ItemsRepositoryImpl()))}
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
