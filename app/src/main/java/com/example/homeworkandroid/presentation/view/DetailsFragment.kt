@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.homeworkandroid.databinding.FragmentDetailsBinding
 import com.example.homeworkandroid.utils.BundleConstants
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class DetailsFragment : Fragment() {
     private var _viewBinding: FragmentDetailsBinding? = null
     private val viewBinding get() = _viewBinding!!

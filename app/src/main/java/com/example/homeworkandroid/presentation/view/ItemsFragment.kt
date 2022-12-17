@@ -14,7 +14,9 @@ import com.example.homeworkandroid.model.ItemsModel
 import com.example.homeworkandroid.presentation.adapter.ItemsAdapter
 import com.example.homeworkandroid.presentation.adapter.listener.ItemsListener
 import com.example.homeworkandroid.utils.BundleConstants
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ItemsFragment : Fragment(), ItemsListener, ItemsView {
 
     private var _viewBinding: FragmentItemsBinding? = null

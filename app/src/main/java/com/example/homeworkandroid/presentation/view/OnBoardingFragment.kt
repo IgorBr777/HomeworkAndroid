@@ -10,8 +10,9 @@ import com.example.homeworkandroid.R
 import com.example.homeworkandroid.databinding.FragmentOnBoardingBinding
 import com.example.homeworkandroid.utils.LoginConstant.login
 import com.example.homeworkandroid.utils.LoginConstant.password
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class OnBoardingFragment : Fragment() {
 
     private var _viewBinding: FragmentOnBoardingBinding? = null
