@@ -19,4 +19,6 @@
     <string name="registration">Registration</string>
     <string name="imageView_clicked">ImageView clicked</string>
     <string name="login_app1">LOGIN APP</string>
+    <string name="go_to_itemsfragment">Go To ItemsFragment</string>
+    <string name="welcome_onboardingfragment">Welcome OnBoardingFragment</string>
 </resources>

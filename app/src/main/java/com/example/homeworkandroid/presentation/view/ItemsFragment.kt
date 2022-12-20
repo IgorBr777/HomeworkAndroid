@@ -7,14 +7,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.homeworkandroid.R
-import com.example.homeworkandroid.data.ItemsRepositoryImpl
 import com.example.homeworkandroid.databinding.FragmentItemsBinding
-import com.example.homeworkandroid.domain.ItemsInteractor
 import com.example.homeworkandroid.model.ItemsModel
 import com.example.homeworkandroid.presentation.adapter.ItemsAdapter
 import com.example.homeworkandroid.presentation.adapter.listener.ItemsListener
 import com.example.homeworkandroid.utils.BundleConstants
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class ItemsFragment : Fragment(), ItemsListener, ItemsView {
@@ -23,7 +22,7 @@ class ItemsFragment : Fragment(), ItemsListener, ItemsView {
     private val viewBinding get() = _viewBinding!!
 
     private lateinit var itemsAdapter: ItemsAdapter
-    lateinit var itemsPresenter: ItemsPresenter
+  @Inject  lateinit var itemsPresenter: ItemsPresenter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +34,7 @@ class ItemsFragment : Fragment(), ItemsListener, ItemsView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        itemsPresenter = ItemsPresenter(this, ItemsInteractor(ItemsRepositoryImpl()))
+        itemsPresenter.setView(this)
 
         itemsAdapter = ItemsAdapter(this)
         viewBinding.recyclerView.adapter = itemsAdapter
