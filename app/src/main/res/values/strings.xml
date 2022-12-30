@@ -21,4 +21,11 @@
     <string name="login_app1">LOGIN APP</string>
     <string name="go_to_itemsfragment">Go To ItemsFragment</string>
     <string name="welcome_onboardingfragment">Welcome OnBoardingFragment</string>
+    <string name="welcome_homefragment">Welcome HomeFragment</string>
+    <string name="go_to_onboarding">Go To OnBoarding</string>
+    <string name="exit">Exit</string>
+    <string name="logout">LOGOUT</string>
+    <string name="login_error">login error</string>
+    <string name="password_entry_error">password entry error</string>
+    <string name="show_creads">Show Creads</string>
 </resources>

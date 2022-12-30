@@ -1,7 +1,7 @@
-package com.example.homeworkandroid.data
+package com.example.homeworkandroid.data.items
 
 import com.example.homeworkandroid.R
-import com.example.homeworkandroid.domain.ItemsRepository
+import com.example.homeworkandroid.domain.items.ItemsRepository
 import com.example.homeworkandroid.model.ItemsModel
 import java.time.LocalDate
 import javax.inject.Inject

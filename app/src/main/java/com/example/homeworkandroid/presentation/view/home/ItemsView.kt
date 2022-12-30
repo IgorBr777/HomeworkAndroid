@@ -1,19 +1,19 @@
-package com.example.homeworkandroid.presentation.view
+package com.example.homeworkandroid.presentation.view.home
 
 import com.example.homeworkandroid.model.ItemsModel
 
 interface ItemsView {
 
-    fun dataReceive(list: List<ItemsModel>)
+    fun itemsReceived(list: List<ItemsModel>)
 
     fun imageViewClicked(msg: Int)
 
-    fun goToDetails(
+    fun itemClicked(
         title: String,
         time: String,
         description: String,
         imageView: Int,
-        imageView2: Int,
+        imageView2: Int
     )
 
 

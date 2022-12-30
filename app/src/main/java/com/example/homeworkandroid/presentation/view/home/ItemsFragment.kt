@@ -1,4 +1,4 @@
-package com.example.homeworkandroid.presentation.view
+package com.example.homeworkandroid.presentation.view.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.homeworkandroid.R
 import com.example.homeworkandroid.databinding.FragmentItemsBinding
 import com.example.homeworkandroid.model.ItemsModel
 import com.example.homeworkandroid.presentation.adapter.ItemsAdapter
 import com.example.homeworkandroid.presentation.adapter.listener.ItemsListener
 import com.example.homeworkandroid.utils.BundleConstants
+import com.example.homeworkandroid.utils.NavigationExt
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -22,7 +22,9 @@ class ItemsFragment : Fragment(), ItemsListener, ItemsView {
     private val viewBinding get() = _viewBinding!!
 
     private lateinit var itemsAdapter: ItemsAdapter
-  @Inject  lateinit var itemsPresenter: ItemsPresenter
+
+    @Inject
+    lateinit var itemsPresenter: ItemsPresenter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +41,7 @@ class ItemsFragment : Fragment(), ItemsListener, ItemsView {
         itemsAdapter = ItemsAdapter(this)
         viewBinding.recyclerView.adapter = itemsAdapter
 
-        itemsPresenter.getData()
+        itemsPresenter.getItems()
 
     }
 
@@ -60,7 +62,7 @@ class ItemsFragment : Fragment(), ItemsListener, ItemsView {
 
     }
 
-    override fun dataReceive(list: List<ItemsModel>) {
+    override fun itemsReceived(list: List<ItemsModel>) {
         itemsAdapter.submitList(list)
     }
 
@@ -69,12 +71,12 @@ class ItemsFragment : Fragment(), ItemsListener, ItemsView {
 
     }
 
-    override fun goToDetails(
+    override fun itemClicked(
         title: String,
         time: String,
         description: String,
         imageView: Int,
-        imageView2: Int,
+        imageView2: Int
     ) {
 
         val detailsFragment = DetailsFragment()
@@ -85,11 +87,8 @@ class ItemsFragment : Fragment(), ItemsListener, ItemsView {
         bundle.putInt(BundleConstants.IMAGE_VIEW, imageView)
         detailsFragment.arguments = bundle
 
-        parentFragmentManager
-            .beginTransaction()
-            .add(R.id.activity_container, detailsFragment)
-            .addToBackStack(getString(R.string.details))
-            .commit()
+        NavigationExt.fmReplace(parentFragmentManager, detailsFragment, true)
+
 
     }
 
