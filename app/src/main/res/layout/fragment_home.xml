@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="256dp"
         android:text="@string/welcome_homefragment"
+        android:gravity="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

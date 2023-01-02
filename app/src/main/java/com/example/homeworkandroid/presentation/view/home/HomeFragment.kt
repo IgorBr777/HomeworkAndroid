@@ -49,7 +49,7 @@ class HomeFragment : Fragment(), HomeView {
 
     override fun userShowData(userCreds: UserModel) {
         viewBinding.tvUserCreds.text =
-            "${userCreds.userName.toString()} ${userCreds.userPassword.toString()}"
+            "${userCreds.userName}\n ${userCreds.userPassword}"
 
     }
 
