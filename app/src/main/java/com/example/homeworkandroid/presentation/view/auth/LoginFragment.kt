@@ -5,21 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.homeworkandroid.R
 import com.example.homeworkandroid.databinding.FragmentLoginBinding
 import com.example.homeworkandroid.presentation.view.home.HomeFragment
 import com.example.homeworkandroid.utils.NavigationExt.fmReplace
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
-class LoginFragment : Fragment(), LoginView {
+class LoginFragment : Fragment() {
 
     private var _viewBinding: FragmentLoginBinding? = null
     private val viewBinding get() = _viewBinding!!
 
-    @Inject
-    lateinit var loginPresenter: LoginPresenter
+    private val viewModel: LoginViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,7 +31,7 @@ class LoginFragment : Fragment(), LoginView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loginPresenter.setView(this)
+
 
         viewBinding.btnShowCreds.setOnClickListener {
 
@@ -44,17 +44,17 @@ class LoginFragment : Fragment(), LoginView {
                 viewBinding.etPassword.error = getString(R.string.password_entry_error)
             } else {
 
-                loginPresenter.loginUser(
+                viewModel.loginUser(
                     viewBinding.etLogin.text.toString(),
                     viewBinding.etPassword.text.toString()
                 )
             }
+
+            viewModel.nav.observe(viewLifecycleOwner) {
+                fmReplace(parentFragmentManager, HomeFragment(), false)
+
+            }
         }
-
-    }
-
-    override fun userLoggedIn() {
-        fmReplace(parentFragmentManager, HomeFragment(), false)
 
     }
 

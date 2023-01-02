@@ -28,6 +28,9 @@ fun getUserCreds(): UserModel {
         authRepository.userLogout()
     }
 
+fun goToItemsFragment()
+{
 
+}
 
 }

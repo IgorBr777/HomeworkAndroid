@@ -5,22 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.homeworkandroid.databinding.FragmentHomeBinding
-import com.example.homeworkandroid.model.UserModel
 import com.example.homeworkandroid.presentation.view.auth.OnBoardingFragment
 import com.example.homeworkandroid.utils.NavigationExt
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(), HomeView {
+class HomeFragment : Fragment() {
 
     private var _viewBinding: FragmentHomeBinding? = null
     private val viewBinding get() = _viewBinding!!
 
+    private val viewModel: HomeViewModel by viewModels()
 
-    @Inject
-    lateinit var homePresenter: HomePresenter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,8 +33,7 @@ class HomeFragment : Fragment(), HomeView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        homePresenter.setView(this)
-        homePresenter.showUserData()
+        viewModel.showUserDate()
 
         viewBinding.btnGoToOnBoarding.setOnClickListener {
             NavigationExt.fmReplace(parentFragmentManager, OnBoardingFragment(), false)
@@ -44,12 +41,10 @@ class HomeFragment : Fragment(), HomeView {
 
         }
 
+        viewModel.userCreds.observe(viewLifecycleOwner) {
+            viewBinding.tvUserCreds.text = "${it.userName} \n ${it.userPassword}"
 
-    }
-
-    override fun userShowData(userCreds: UserModel) {
-        viewBinding.tvUserCreds.text =
-            "${userCreds.userName.toString()} ${userCreds.userPassword.toString()}"
+        }
 
     }
 

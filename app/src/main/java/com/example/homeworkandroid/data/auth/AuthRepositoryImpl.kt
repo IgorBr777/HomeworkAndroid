@@ -24,6 +24,10 @@ class AuthRepositoryImpl @Inject constructor(
         sharedPreferenceHelper.removeUser()
     }
 
+    override fun goToItemsFragment() {
+
+    }
+
     override fun showUserCreds(): UserModel {
         return  sharedPreferenceHelper.getUserCreds()
     }

@@ -5,20 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.homeworkandroid.databinding.FragmentOnBoardingBinding
 import com.example.homeworkandroid.presentation.view.home.ItemsFragment
 import com.example.homeworkandroid.utils.NavigationExt
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
-class OnBoardingFragment : Fragment(), OnBoardingView {
+class OnBoardingFragment : Fragment() {
 
     private var _viewBinding: FragmentOnBoardingBinding? = null
     private val viewBinding get() = _viewBinding!!
 
-    @Inject
-    lateinit var onBoardingPresenter: OnBoardingPresenter
+    private val viewModel: OnBoardingViewModel by viewModels()
 
 
     override fun onCreateView(
@@ -32,21 +31,16 @@ class OnBoardingFragment : Fragment(), OnBoardingView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        onBoardingPresenter.setView(this)
+
+
 
         viewBinding.btnItemsFragment.setOnClickListener {
-            onBoardingPresenter.goToItemsFragment()
-
+            viewModel.goToItemsFragment()
 
         }
-
-    }
-
-
-    override fun goToItemsFragment() {
-        NavigationExt.fmReplace(parentFragmentManager, ItemsFragment(), false)
-
-
+        viewModel.btnClicked.observe(viewLifecycleOwner) {
+            NavigationExt.fmReplace(parentFragmentManager, ItemsFragment(), false)
+        }
     }
 
 }
